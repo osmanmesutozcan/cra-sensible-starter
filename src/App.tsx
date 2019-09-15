@@ -1,14 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Route, RouteProps, Redirect} from 'react-router-dom'
 
-import './App.css';
-import {Home} from "./pages/Home";
-import {Auth} from "./pages/Auth";
+import {Dashboard} from "./pages/dashboard";
+import {Auth} from "./pages/auth";
 
 const PrivateRoute: React.FC<RouteProps> = ({component, ...rest}) => {
   const Component = component as any;
   const render = (props: any) =>
-      (false)
+      (true)
           ? (<Component {...props} />)
           : (<Redirect to={"/auth"} />);
 
@@ -18,7 +17,7 @@ const PrivateRoute: React.FC<RouteProps> = ({component, ...rest}) => {
 const App: React.FC = () => {
   return (
       <BrowserRouter>
-        <PrivateRoute path="/" exact={true} component={Home} />
+        <PrivateRoute path="/" exact={true} component={Dashboard} />
         <Route path="/auth" exact={true} component={Auth} />
       </BrowserRouter>
   );

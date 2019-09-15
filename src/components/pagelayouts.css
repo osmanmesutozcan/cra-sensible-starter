@@ -1,0 +1,15 @@
+.pagelayouts-fullarea {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+
+.pagelayouts-fullarea-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.pagelayouts-fullarea-vertical {
+  flex-direction: column;
+}
