@@ -1,9 +1,8 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import {CacheProvider} from "rest-hooks";
 import {BrowserRouter, Route, RouteProps, Redirect} from 'react-router-dom'
 
 import {RouterContext} from "./base/hooks";
-import {Loader} from "./components/loader";
 import {Dashboard} from "./pages/dashboard";
 import {Auth} from "./pages/auth";
 
@@ -33,7 +32,6 @@ const PrivateRoute: React.FC<RouteProps> = ({component, ...rest}) => {
 const App: React.FC = () => {
   return (
       <CacheProvider>
-        <Suspense fallback={<Loader />}>
           <CustomBrowserRouter>
             {/* EXACT ROUTES */}
             <Route path="/auth" exact={true} component={Auth} />
@@ -41,7 +39,6 @@ const App: React.FC = () => {
             {/* CATCH ALL ELSE */}
             <PrivateRoute path="/" component={Dashboard} />
           </CustomBrowserRouter>
-        </Suspense>
       </CacheProvider>
   )
 };
