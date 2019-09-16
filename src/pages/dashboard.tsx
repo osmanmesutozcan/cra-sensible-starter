@@ -40,8 +40,8 @@ const DashboardSider: React.FC<RouterProps> = ({history}) => {
             defaultSelectedKeys={[router.location.pathname]}
             onSelect={({key}) => history.push(key)}
         >
-          <Menu.Item key="/">Menu 1</Menu.Item>
-          <Menu.Item key="/users">Menu 2</Menu.Item>
+          <Menu.Item key="/">Home</Menu.Item>
+          <Menu.Item key="/users">Users</Menu.Item>
         </Menu>
       </Sider>
   );
