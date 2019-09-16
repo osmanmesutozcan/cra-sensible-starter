@@ -1,8 +1,9 @@
 import React from 'react';
-import {Table} from 'antd';
+import {Icon, Table} from 'antd';
 import {useFetcher, useResource} from "rest-hooks";
+
 import {ManagedUser} from "../../resources/managed-user";
-import {PrimaryButton} from "../buttons";
+import {GhostButton, PrimaryButton, UploadButton} from "../buttons";
 
 const usersTableColumns = [
   {
@@ -23,7 +24,10 @@ export const UsersTable: React.FC = () => {
 
   return (
       <>
-        <PrimaryButton label="Refresh" onClick={() => refresh({}, {})} />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <UploadButton />
+          <GhostButton label={<Icon type={"sync"} />} onClick={() => refresh({}, {})} />
+        </div>
         <Table rowKey="id" size="middle" columns={usersTableColumns} dataSource={users} />
       </>
   );

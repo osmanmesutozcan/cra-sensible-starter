@@ -1,14 +1,33 @@
-import React from 'react';
-import {Button} from "antd";
+import React, {ReactElement} from 'react';
+import {Button, Icon, Upload} from "antd";
+import {UploadProps} from "antd/es/upload";
 
 export interface SharedButtonProps {
-  label: string;
+  label: string | ReactElement;
   onClick: React.MouseEventHandler<HTMLElement>
 }
 
-export const PrimaryButton: React.FC<SharedButtonProps> = (props) => {
-  const { label, onClick } = props;
+export const GhostButton: React.FC<SharedButtonProps> = (props) => {
+  const { label } = props;
   return (
-      <Button onClick={onClick} type="primary">{label}</Button>
+      <Button {...props}>{label}</Button>
+  );
+};
+
+export const PrimaryButton: React.FC<SharedButtonProps> = (props) => {
+  const { label } = props;
+  return (
+      <Button type="primary" {...props}>{label}</Button>
+  );
+};
+
+export const UploadButton: React.FC<UploadProps> = (props) => {
+  return (
+    <Upload showUploadList={props.showUploadList || false}>
+      <GhostButton
+          {...props as SharedButtonProps}
+          label={<><Icon type="upload" /> Click to Upload</>}
+      />
+    </Upload>
   );
 };
