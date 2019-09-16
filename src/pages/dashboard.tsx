@@ -34,6 +34,7 @@ const DashboardSider: React.FC<RouterProps> = ({history}) => {
             style={{height: '100%', paddingTop: '21px'}}
             theme="dark"
             mode="inline"
+            selectedKeys={[router.location.pathname]}
             defaultSelectedKeys={[router.location.pathname]}
             onSelect={({key}) => history.push(key)}
         >
