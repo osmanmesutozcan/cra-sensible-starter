@@ -16,7 +16,7 @@ export const FullArea: React.FC<FullAreaProps> = (props) => {
       <div
           style={style}
           className={
-            `pagelayouts-fullarea page-fullarea-${orientation || 'horizontal'} ` +
+            `pagelayouts-fullarea pagelayouts-fullarea-${orientation || 'horizontal'} ` +
             (centered ? `pagelayouts-fullarea-centered ` : "") +
             (className || "")
           }
