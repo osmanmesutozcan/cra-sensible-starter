@@ -3,25 +3,22 @@ import {Layout, Menu} from "antd";
 import {RouterProps} from "react-router";
 
 import {FullArea} from "../components/pagelayouts";
-import {UsersTable} from "../components/tables/users";
 import {useRouter} from "../base/hooks";
-import {RestLoadingBoundary} from "../components/boundaries";
+import {UsersContent} from "../components/contents/users";
 
 const DashboardContent: React.FC = () => {
   const router = useRouter();
   const { Content } = Layout;
 
   const ContentComponents: any = {
-    '/': <UsersTable />,
-    '/users': <UsersTable />,
+    '/': <UsersContent />,
+    '/users': <UsersContent />,
   };
 
   return (
       <Content style={{padding: '25px'}}>
         <FullArea style={{background: '#fff', padding: '10px'}} orientation="vertical">
-          <RestLoadingBoundary>
-            {ContentComponents[router.location.pathname]}
-          </RestLoadingBoundary>
+          {ContentComponents[router.location.pathname]}
         </FullArea>
       </Content>
   );
