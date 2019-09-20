@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**NOTE**: There is commented version of the repo. You can check it in `commented` branch.
+**NOTE**: There is commented version of the repo. You can check it in [commented](https://github.com/osmanmesutozcan/cra-sensible-starter/tree/commented) branch.
 
 ## Available Scripts
 
