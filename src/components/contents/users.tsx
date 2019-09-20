@@ -6,6 +6,11 @@ import {Divider, Icon} from "antd";
 import {UsersTable} from "../tables/users";
 import {RestLoadingBoundary} from "../boundaries";
 
+/**
+ * This is a Content component to render in the dashboard content area.
+ * 
+ * It uses resthooks to fetch data from our imaginary REST server.
+ */
 export const UsersContent: React.FC = () => {
   const refresh = useFetcher(ManagedUser.listShape());
 

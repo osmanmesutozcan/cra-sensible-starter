@@ -9,6 +9,12 @@ export interface FullAreaProps {
   centered?: boolean;
 }
 
+/**
+ * This is a utility component wrapping some css code written in `./pagelayouts.css`.
+ * 
+ * It is useful to have helper components whenever we feel like we are doing the
+ * same thing over and over. I mean we always need to center some stuff.
+ */
 export const FullArea: React.FC<FullAreaProps> = (props) => {
   const {className, children, orientation, centered, style} = props;
 

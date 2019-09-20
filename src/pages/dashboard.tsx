@@ -6,6 +6,14 @@ import {FullArea} from "../components/pagelayouts";
 import {useRouter} from "../base/hooks";
 import {UsersContent} from "../components/contents/users";
 
+/**
+ * Here we render the content section of the dashboard.
+ * 
+ * It uses `useRouter` hook we build. useRouter will
+ * use Context API to pass these router values down the
+ * component tree. We set the Context stuff in `App.tsx` and
+ * `src/base/hooks.ts`.
+ */
 const DashboardContent: React.FC = () => {
   const router = useRouter();
   const { Content } = Layout;
@@ -45,6 +53,14 @@ const DashboardSider: React.FC<RouterProps> = ({history}) => {
   );
 };
 
+/**
+ * We are just using antdesign layout here. It is a very high level component
+ * library to get started prototyping very fast. Once we get our application
+ * going we can start adding custom components and theming antd on the go.
+ * 
+ * Extra resources to check:
+ *  - https://ant.design/components/layout/#components-layout-demo-basic
+ */
 export const Dashboard: React.FC<RouterProps> = ({history}) => {
   const { Header } = Layout;
 
