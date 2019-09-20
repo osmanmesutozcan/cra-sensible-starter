@@ -3,8 +3,6 @@ Comments are by no means exhaustively educative. It only aims to point to some d
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**NOTE**: There is commented version of the repo. You can check it in `commented` branch.
-
 ## Available Scripts
 
 In the project directory, you can run:
